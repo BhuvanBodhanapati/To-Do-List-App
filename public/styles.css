@@ -1,0 +1,70 @@
+.addTask input{
+    color: rgb(68, 68, 68);
+    height: 30px;
+    font-size: 1.25em;
+    background-color: #fff4e8;
+    text-align: center;
+    border: none;
+    border-bottom: 3px dashed #ffd269;
+    margin-right: 15px;
+}
+
+.addTask input:focus{
+    outline: none;
+}
+
+.addTask input::placeholder{
+    color: rgb(126, 126, 126);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.addTask button{
+    font-size: 1em;
+    color: #ffd269;
+    height: 40px;
+    width: 50px;
+    border: 2px solid #ffd269;
+    border-radius: 45%;
+}
+
+.allTasks{
+    width: 150px;
+    margin:30px auto;
+    text-align: left;
+}
+
+body{
+    text-align: center;
+    background-color: #ffd269;
+}
+
+h1{
+    font-size: 1.5em;
+    margin: 20px 0 ;
+    padding: 5px 20px;
+    display: inline-block;
+    background-color: #ffac06;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border-radius: 5%;
+}
+
+.todoBoard{
+    margin: 50px auto;
+    padding: 10px 0;
+    width: 400px;
+    min-height: 600px;
+    background-color: #fff4e8;
+    border-radius: 5%;
+    box-shadow: 2px 2px 15px rgb(179, 177, 177), -2px -2px 6px rgb(179, 177, 177);
+}
+
+.taskItem{
+    font-size: 1.35em;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 700;
+    margin-bottom: 10px;
+    list-style-type: disc;
+}

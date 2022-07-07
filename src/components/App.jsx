@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import AddTask from './AddTask';
 import TaskItem from './TaskItem';
 
-const tasks = ['eat', 'sleep','dream'];
 
 function App(){
     
-    const [newTask, setNewTask] = useState(['']);
+    const [newTask, setNewTask] = useState('');
     const [tasks, setTasks] = useState([]);
 
     function getNewTask(event){
         setNewTask(event.target.value);
     }
-
     function addNewTask(){
-        setTasks( (prevTasks) => ( [...prevTasks , newTask] ));
+        if(newTask.length!=0){
+            setTasks( (prevTasks) => ( [...prevTasks , newTask] ));
+        }
         setNewTask("");
     }
     function deleteTask(id){
@@ -26,22 +26,30 @@ function App(){
     }
     return (
         <div className='todoBoard'>
+
             <h1>To Do List</h1>
+
             <AddTask 
                 getNewTask = {getNewTask}
                 newTask = {newTask}
                 addNewTask = {addNewTask}
             />
+
             <div className='allTasks'>
-                {tasks.map( (task,index) => (
-                    <TaskItem 
-                        key = {index}
-                        id = {index}
-                        task = {task}
-                        deleteTask = {deleteTask}
-                    />
-                ))}
+                {tasks.map( (task,index) => {
+                    if(task.length!=0){
+                        return (
+                            <TaskItem 
+                                key = {index}
+                                id = {index}
+                                task = {task}
+                                deleteTask = {deleteTask}
+                            />
+                        )
+                    }
+                })}
             </div>
+
         </div>
     )
 }

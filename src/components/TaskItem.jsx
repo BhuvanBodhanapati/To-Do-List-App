@@ -3,22 +3,16 @@ import React, { useState } from 'react';
 
 
 function TaskItem(props){
-
-    const [completed, setCompleted] = useState(false);
-
-    function markCompleted(event){
-        setCompleted((prevValue) => !prevValue);
-    }
-
+    
     return (
         <div className='taskItem'>
-            <li 
-                onClick={()=>{
-                    props.deleteTask(props.id)
-                }}
-                style={{textDecoration : completed ? "line-through" : 'none'}} >
-                {props.task}
-            </li>
+            <input type='checkbox' 
+                    className='checkBox' 
+                    onChange={ () => {
+                        props.deleteTask(props.id)
+                    }}>
+            </input>
+            <li> {props.task} </li>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import AddTask from './AddTask';
 import TaskItem from './TaskItem';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App(){
@@ -17,6 +18,8 @@ function App(){
         }
         setNewTask("");
     }
+
+
     function deleteTask(id){
         setTasks( (prevTasks) => {
             return prevTasks.filter( (task, index) => {
@@ -40,7 +43,7 @@ function App(){
                     if(task.length!=0){
                         return (
                             <TaskItem 
-                                key = {index}
+                                key = {uuidv4()}
                                 id = {index}
                                 task = {task}
                                 deleteTask = {deleteTask}

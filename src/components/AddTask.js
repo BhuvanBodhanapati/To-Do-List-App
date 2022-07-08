@@ -7,7 +7,12 @@ function AddTask(props){
                 <input type="text" 
                         placeholder='New Task' 
                         onChange={props.getNewTask} 
-                        value={props.newTask}>
+                        value={props.newTask}
+                        onKeyPress={(event)=>{
+                            if(event.code=='Enter'){
+                                props.addNewTask();
+                            }
+                        }}>
                 </input>
                 <button onClick={props.addNewTask}>Add</button>
         </div>
